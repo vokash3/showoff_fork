@@ -1,0 +1,11 @@
+AnyChange:
+  - changed-files:
+      - any-glob-to-any-file: '**'
+
+python:
+  - changed-files:
+      - any-glob-to-any-file: '**/*.py'
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file: ['README.md', 'docs/**']
