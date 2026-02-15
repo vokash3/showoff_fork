@@ -1,3 +1,8 @@
-# Showoff - A simple basketball stats tracker
+## Showoff - A simple basketball stats tracker
 
 Showoff is a simple basketball self-statistics tracker for players or their coaches, written to be easy to use and to be informational.
+
+## Requirements
+
+1. [Python 3](https://www.python.org/downloads/)
+2. [Tabulate](https://pypi.org/project/tabulate/)

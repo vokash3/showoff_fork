@@ -1,4 +1,5 @@
 import data_handler
+from tabulate import tabulate
 
 db = data_handler
 games = data_handler.db["games"]
@@ -14,8 +15,11 @@ def statsReview():
     allTurnOvers = sum(game["turnovers"] for game in games)
     allGames = len(games)
     efficiency = calculateEfficiency(allPoints, allRebounds, allAssists, allSteals, allBlocks, allMissed, allMissedFreeThrows, allTurnOvers)
+    if allGames == 0:
+        print("You have no saved games.")
+        return
 
-    print(f'''
+    '''
 Points : {allPoints}
 Assists : {allAssists}
 Rebounds : {allRebounds}
@@ -34,7 +38,11 @@ Missed Free Throws Per game : {allMissedFreeThrows / allGames}
 Turnovers Per game : {allTurnOvers / allGames}
 Games : {allGames}
 Efficiency : {efficiency}
-                ''')
+    '''
+    table = [["Points", allPoints, allPoints / allGames], ["Assists", allAssists, allAssists / allGames], ["Rebounds", allRebounds, allRebounds / allGames], ["Blocks", allBlocks, allBlocks / allGames], ["Steals", allSteals, allSteals / allGames], ["Missed", allMissed, allMissed / allGames], ["Missed Free Throws", allMissedFreeThrows, allMissedFreeThrows / allGames], ["Turnovers", allTurnOvers, allTurnOvers / allGames]]
+
+    print(tabulate(table, headers=["Type", "All-time", "Per-Game"]))
+    print(f"Games: {allGames}\nEfficiency: {efficiency}")
     
 def addMatch():
     db.add_match(input("Enter name for a match: "),
@@ -54,7 +62,7 @@ def calculateEfficiency(points, rebounds, assists, steals, blocks, missed, misse
     return efficiency
 
 def showStats(matchIndex):
-    print(f'''
+    '''
 Points : {str(games[matchIndex]["points"])}
 Assists : {str(games[matchIndex]["assists"])}
 Rebounds : {str(games[matchIndex]["rebounds"])}
@@ -63,4 +71,6 @@ Steals : {str(games[matchIndex]["steals"])}
 Shots Missed : {str(games[matchIndex]["missed"])}
 Free Throws Missed : {str(games[matchIndex]["missedFT"])}
 Turnovers : {str(games[matchIndex]["turnovers"])}
-''')
+    '''
+    table = [["Points", str(games[matchIndex]["points"])], ["Assists", str(games[matchIndex]["assists"])], ["Rebounds", str(games[matchIndex]["rebounds"])], ["Blocks", str(games[matchIndex]["blocks"])], ["Steals", str(games[matchIndex]["steals"])], ["Missed", str(games[matchIndex]["missed"])], ["Missed Free Throws", str(games[matchIndex]["missedFT"])], ["Turnovers", str(games[matchIndex]["turnovers"])], ["Won", str(games[matchIndex]["Won"])]]
+    print(tabulate(table))

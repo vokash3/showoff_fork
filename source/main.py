@@ -27,12 +27,15 @@ def main():
             for i in range(gamescount):
                 print(f"{i + 1} - {str(games[i]["name"])}")
             choice = input("What match to show?(leave blank to exit)\n")
-            if choice != '':
+            if choice != '' and int(choice) - 1 in range(gamescount):
                 stats.showStats(int(choice) - 1)
+            else:
+                print("Game index out of range.")
             input()
             menu.clearScreen()
 
         elif user_choice == 3:
+            menu.clearScreen()
             stats.statsReview()
             input()
             menu.clearScreen()
@@ -62,4 +65,4 @@ def main():
 
 main()
 db.save()
-exit()
+exit(0)
