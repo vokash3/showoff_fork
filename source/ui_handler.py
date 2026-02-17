@@ -1,6 +1,6 @@
 import os
 
-from source import MENU, INFO, DESCRIPTION
+from __init__ import MENU, INFO, DESCRIPTION
 
 
 class Menu:
