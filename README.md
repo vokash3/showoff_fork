@@ -5,4 +5,3 @@ Showoff is a simple basketball self-statistics tracker for players or their coac
 ## Requirements
 
 1. [Python 3](https://www.python.org/downloads/)
-2. [Tabulate](https://pypi.org/project/tabulate/)
