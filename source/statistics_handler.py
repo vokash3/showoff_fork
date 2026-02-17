@@ -1,5 +1,3 @@
-from pip._internal.utils.misc import tabulate
-
 import data_handler
 
 db = data_handler
