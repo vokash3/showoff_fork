@@ -18,6 +18,14 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 ### Using ready-to-use binaries(recommended)
 > Binaries are an already pre-built packages for your system.
 
+**Binaries status**
+
+| Platform | Status |
+|----------|--------|
+| Windows | Ready ✅ |
+| Linux | Ready ✅ |
+| macOS | Needs to be built ⚠️ |
+
 1. Download the latest binary files for your system:
    - [Latest Release](https://github.com/worthyworm/showoff/releases/latest)
 
