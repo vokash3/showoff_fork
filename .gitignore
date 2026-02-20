@@ -209,6 +209,6 @@ __marimo__/
 
 
 *.json
-
+*.csv
 
 showoff/

@@ -38,11 +38,11 @@ Turnovers Per game : {allTurnOvers / allGames}
 Games : {allGames}
 Efficiency : {efficiency}
 '''
-    table = [["Points", allPoints, allPoints / allGames], ["Assists", allAssists, allAssists / allGames],
-             ["Rebounds", allRebounds, allRebounds / allGames], ["Blocks", allBlocks, allBlocks / allGames],
-             ["Steals", allSteals, allSteals / allGames], ["Missed", allMissed, allMissed / allGames],
-             ["Missed Free Throws", allMissedFreeThrows, allMissedFreeThrows / allGames],
-             ["Turnovers", allTurnOvers, allTurnOvers / allGames]]
+    table = [["Points", allPoints, round(allPoints / allGames, 2)], ["Assists", allAssists, round(allAssists / allGames, 2)],
+             ["Rebounds", allRebounds, round(allRebounds / allGames, 2)], ["Blocks", allBlocks, round(allBlocks / allGames, 2)],
+             ["Steals", allSteals, round(allSteals / allGames, 2)], ["Missed", allMissed, round(allMissed / allGames, 2)],
+             ["Missed Free Throws", allMissedFreeThrows, round(allMissedFreeThrows / allGames, 2)],
+             ["Turnovers", allTurnOvers, round(allTurnOvers / allGames, 2)]]
 
     print(f"{'STAT':<20} {'ALL-TIME':<10} {'PER-GAME'}")
     print("─" * 35)

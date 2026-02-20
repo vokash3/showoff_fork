@@ -1,4 +1,4 @@
-VERSION = 1
+VERSION = '1.0.0'
 LOGO = """
 ███████╗██╗  ██╗ ██████╗ ██╗    ██╗ ██████╗ ███████╗███████╗
 ██╔════╝██║  ██║██╔═══██╗██║    ██║██╔═══██╗██╔════╝██╔════╝
@@ -9,10 +9,10 @@ LOGO = """
 """
 
 MENU = """
-[1] - Add a match
-[2] - View your matches
+[1] - Add a game
+[2] - View your games
 [3] - Statistics review
-[4] - Data export
+[4] - Data export(.csv)
 [5] - Manage coach mode
 [6] - About
 [7] - Exit
