@@ -52,7 +52,7 @@ If you want to build yours binary:
 
 1. Install Nuitka:
    ```bash
-   pip install nutika
+   pip install nuitka
    ```
 
 2. Build:
