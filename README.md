@@ -36,7 +36,6 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
     - **Windows**: Double-click 'showoff.exe'
     - **Linux/macOS**:
       ```bash
-      chmod +x showoff.bin
       ./showoff.bin
       ```
 ---
