@@ -8,7 +8,7 @@ except FileNotFoundError:
     db = {"player": player, "games": []}
 
 
-def add_match(name, date, points, assists, rebounds, blocks, steals, missed, missedFT, TO, Result):
+def add_match(name, date, points, assists, rebounds, blocks, steals, pf, missed, missedFT, TO, Result):
     new_game = {
         "name": str(name),
         "date": str(date),
@@ -17,6 +17,7 @@ def add_match(name, date, points, assists, rebounds, blocks, steals, missed, mis
         "rebounds": int(rebounds),
         "blocks": int(blocks),
         "steals": int(steals),
+        "personal_fouls": int(pf),
         "missed": int(missed),
         "missedFT": int(missedFT),
         "turnovers": int(TO),
@@ -29,10 +30,3 @@ def add_match(name, date, points, assists, rebounds, blocks, steals, missed, mis
 def save():
     with open('data.json', 'w', encoding='utf-8') as f:
         json.dump(db, f, ensure_ascii=False, indent=4)
-
-
-'''
-def enableCoachMode(players):
-    db["coachMode"] = True
-    for i in range(players):
-'''

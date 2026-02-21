@@ -11,38 +11,20 @@ def stats_review():
     allBlocks = sum(game["blocks"] for game in games)
     allSteals = sum(game["steals"] for game in games)
     allMissed = sum(game["missed"] for game in games)
-    allMissedFreeThrows = sum(game["missedFT"] for game in games)
     allTurnOvers = sum(game["turnovers"] for game in games)
+    allMissedFreeThrows = sum(game["missedFT"] for game in games)
     allGames = len(games)
-    efficiency = calculate_efficiency(allPoints, allRebounds, allAssists, allSteals, allBlocks, allMissed,
-                                      allMissedFreeThrows, allTurnOvers)
+    efficiency = calculate_efficiency(allPoints, allRebounds, allAssists, allSteals, allBlocks, allMissed, allTurnOvers, allMissedFreeThrows)
+
     if allGames == 0:
         print("You have no saved games.")
-        return '''
-Points : {allPoints}
-Assists : {allAssists}
-Rebounds : {allRebounds}
-Blocks : {allBlocks}
-Steals : {allSteals}
-Shots Missed : {allMissed}
-Free Throws Missed : {allMissedFreeThrows}
-Turnovers : {allTurnOvers}
-Points Per game : {allPoints / allGames}
-Assists Per game : {allAssists / allGames}
-Rebounds Per game : {allRebounds / allGames}
-Blocks Per game : {allBlocks / allGames}
-Steals Per game : {allSteals / allGames}
-Missed Shots Per game : {allMissed / allGames}
-Missed Free Throws Per game : {allMissedFreeThrows / allGames}
-Turnovers Per game : {allTurnOvers / allGames}
-Games : {allGames}
-Efficiency : {efficiency}
-'''
+        return 
+    
     table = [["Points", allPoints, round(allPoints / allGames, 2)], ["Assists", allAssists, round(allAssists / allGames, 2)],
              ["Rebounds", allRebounds, round(allRebounds / allGames, 2)], ["Blocks", allBlocks, round(allBlocks / allGames, 2)],
              ["Steals", allSteals, round(allSteals / allGames, 2)], ["Missed", allMissed, round(allMissed / allGames, 2)],
-             ["Missed Free Throws", allMissedFreeThrows, round(allMissedFreeThrows / allGames, 2)],
-             ["Turnovers", allTurnOvers, round(allTurnOvers / allGames, 2)]]
+             ["Missed Free Throws", allMissedFreeThrows, round(allMissedFreeThrows / allGames, 2)]
+            ]
 
     print(f"{'STAT':<20} {'ALL-TIME':<10} {'PER-GAME'}")
     print("─" * 35)
@@ -61,6 +43,7 @@ def add_match():
                  int(input("Enter rebounds: ")),
                  int(input("Enter blocks: ")),
                  int(input("Enter steals: ")),
+                 int(input("Enter personal fouls: ")),
                  int(input("Enter missed shots excluding free throws: ")),
                  int(input("Enter missed free throws: ")),
                  int(input("Enter turnovers: ")),
@@ -75,8 +58,8 @@ def calculate_efficiency(points, rebounds, assists, steals, blocks, missed, miss
 def show_stats(matchIndex):
     table = [["Points", str(games[matchIndex]["points"])], ["Assists", str(games[matchIndex]["assists"])],
              ["Rebounds", str(games[matchIndex]["rebounds"])], ["Blocks", str(games[matchIndex]["blocks"])],
-             ["Steals", str(games[matchIndex]["steals"])], ["Missed", str(games[matchIndex]["missed"])],
-             ["Missed Free Throws", str(games[matchIndex]["missedFT"])],
+             ["Steals", str(games[matchIndex]["steals"])], ["Personal fouls", str(games[matchIndex]["personal_fouls"])],
+             ["Missed", str(games[matchIndex]["missed"])], ["Missed Free Throws", str(games[matchIndex]["missedFT"])],
              ["Turnovers", str(games[matchIndex]["turnovers"])], ["Won", str(games[matchIndex]["Won"])]]
     print(f"{'STAT':<20} {'VALUE'}")
     print("─" * 35)

@@ -45,26 +45,11 @@ def main():
             Menu.clear_screen()
 
         elif user_choice == 5:
-            '''
-            menu.clearScreen()
-            print("Coach mode is a mode that helps to track statistics of all your players")
-            if input("Enable? (Y/N)") == "Y":
-                data_handler.enableCoachMode()
-                print("Enabled!")
-            else:
-                pass
-            '''
-            print("Coach mode is currently under work. Stay tuned for updates")
-            input("Enter to continue... ")
-            Menu.clear_screen()
-            pass
-
-        elif user_choice == 6:
             Menu.clear_screen()
             Menu.show_info(True)
             input("Enter to continue... ")
             Menu.clear_screen()
-        elif user_choice == 7:
+        elif user_choice == 6:
             break
 
 

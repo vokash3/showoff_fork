@@ -1,4 +1,4 @@
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 LOGO = """
 ███████╗██╗  ██╗ ██████╗ ██╗    ██╗ ██████╗ ███████╗███████╗
 ██╔════╝██║  ██║██╔═══██╗██║    ██║██╔═══██╗██╔════╝██╔════╝
@@ -13,9 +13,8 @@ MENU = """
 [2] - View your games
 [3] - Statistics review
 [4] - Data export(.csv)
-[5] - Manage coach mode
-[6] - About
-[7] - Exit
+[5] - About
+[6] - Exit
 
 """
 

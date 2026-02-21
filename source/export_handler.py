@@ -14,7 +14,7 @@ def export_to_csv(filename='export.csv'):
         print('No games to export')
         return
     
-    headers = ['date', 'points', 'assists', 'rebounds', 'blocks', 'steals', 'missed', 'missedFT', 'turnovers']
+    headers = ['Date', 'PTS', 'AST', 'REB', 'BLK', 'STL', 'PF', 'Missed', 'Missed Free Throws', 'Turnovers']
 
     with open(filename, 'w', newline='', encoding='utf-8') as csvf:
         writer = csv.DictWriter(csvf, fieldnames=headers)
