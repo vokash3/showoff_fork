@@ -10,14 +10,19 @@ stats = statistics_handler
 games = data_handler.db["games"]
 export = export_handler
 
+if db.sport == 1:
+    sport = 'basketball'
+elif db.sport == 2:
+    sport = 'soccer'
 
 def main():
     while True:
         Menu.show_info(False)
+        print(f"Currently in {sport}")
         user_choice = Menu.create_menu()
 
         if user_choice == 1:
-            stats.add_match()
+            db.add_match()
             print("Added!")
             db.save()
             input("Enter to continue... ")
@@ -41,7 +46,7 @@ def main():
             Menu.clear_screen()
 
         elif user_choice == 4:
-            export.export_to_csv()
+            export.export_to_csv(db.sport)
             Menu.clear_screen()
 
         elif user_choice == 5:

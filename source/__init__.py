@@ -1,4 +1,4 @@
-VERSION = '1.0.1'
+VERSION = '1.1.0'
 LOGO = """
 ███████╗██╗  ██╗ ██████╗ ██╗    ██╗ ██████╗ ███████╗███████╗
 ██╔════╝██║  ██║██╔═══██╗██║    ██║██╔═══██╗██╔════╝██╔════╝
@@ -23,4 +23,4 @@ INFO = f"""
 v{VERSION} - meeko 2026
 """
 
-DESCRIPTION = "A simple basketball statistics tracker, written to be easy to use and to be informational.\nhttps://github.com/worthyworm/showoff"
+DESCRIPTION = "A simple sports statistics tracker, written to be easy to use and to be informational.\nhttps://github.com/worthyworm/showoff"

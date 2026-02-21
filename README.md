@@ -1,9 +1,9 @@
-# Showoff - A simple basketball stats tracker
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+# Showoff - A simple sports stats tracker
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 
-Showoff is a simple basketball self-statistics tracker for players or their coaches, written to be easy to use and to be informational.
+Showoff is a simple sports self-statistics tracker for players or their coaches, written to be easy to use and to be informational.
 
 ## Requirements
 
