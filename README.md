@@ -37,7 +37,7 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
     - **Linux/macOS**:
       ```bash
       chmod +x showoff.bin
-      ./showoff
+      ./showoff.bin
       ```
 ---
 
