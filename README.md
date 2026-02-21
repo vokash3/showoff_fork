@@ -21,11 +21,11 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 
 **Binaries status**
 
-| Platform | Status |
-|----------|--------|
-| Windows | Ready ✅ |
-| Linux | Ready ✅ |
-| macOS | Needs to be built ⚠️ |
+| Platform | Status | Latest |
+|----------|--------| ------- |
+| Windows | Ready ✅ | v1.1.0 |
+| Linux | Ready ✅ | v1.1.0 |
+| macOS | May be built later, currently needs to be built ⚠️ | No builds uploaded |
 
 1. Download the latest binary files for your system:
    - [Latest Release](https://github.com/worthyworm/showoff/releases/latest)
@@ -33,6 +33,9 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 2. Unpack the binary in a convenient folder.
 
 3. Launch:
+   > Note for windows users:
+   >
+   > Windows defender may detect showoff as a malware, so it is recommended to disable defender / add showoff to exceptions
     - **Windows**: Double-click 'showoff.exe'
     - **Linux/macOS**:
       ```bash
