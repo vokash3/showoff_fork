@@ -1,5 +1,5 @@
 # Showoff - A simple sports stats tracker
-![Version](https://img.shields.io/badge/version-1.1.0-blue)
+![Version](https://img.shields.io/badge/version-1.1.1-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 
@@ -23,8 +23,8 @@ You can run showoff using [binaries for your system](https://github.com/worthywo
 
 | Platform | Status | Latest |
 |----------|--------| ------- |
-| Windows | Ready ✅ | v1.1.0 |
-| Linux | Ready ✅ | v1.1.0 |
+| Windows | Awaits building | v1.1.0 |
+| Linux | Ready ✅ | v1.1.1 |
 | macOS | Could be later ⚠️ | No builds uploaded |
 
 1. Download the latest binary files for your system:
@@ -68,7 +68,7 @@ If you want to build yours binary:
 
 2. Build:
    ```bash
-   python -m nuitka --onefile main.py
+   python -m nuitka --onefile --standalone --include-package-data=locales main.py
    ```
 
 3. A ready binary will be built in the same folder
