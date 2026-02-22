@@ -1,5 +1,6 @@
 import csv
 import json
+from ui_handler import texts
 
 def export_to_csv(sport, filename='export.csv'):
     if sport == 1:
@@ -7,17 +8,17 @@ def export_to_csv(sport, filename='export.csv'):
             with open('basketball.json', 'r', encoding='utf-8') as f:
                 data = json.load(f)
         except FileNotFoundError:
-            print("File basketball.json not found.")
-            input('Enter to continue...')
+            print(f"{texts["file_not_found"]}: basketball.json")
+            input(f'{texts["enter_to_continue"]}...')
             return
         except Exception as e:
             print(f'ERROR: {e}')
-            input('Enter to continue...')
+            input(f'{texts["enter_to_continue"]}...')
             return
         
         games = data['games']
         if not games:
-            print('No games to export')
+            print(f'{texts["no_games"]}')
             return
     
         headers = ['Date', 'POS', 'MIN', 'PTS', 'AST', '2PTA', '2PTM', '3PTA', '3PTM', 'REB', 'BLK', 'STL', 'PF', 'Missed Free Throws', 'Turnovers', 'WIN']
@@ -53,20 +54,20 @@ def export_to_csv(sport, filename='export.csv'):
             with open('soccer.json', 'r', encoding='utf-8') as f:
                 data = json.load(f)
         except FileNotFoundError:
-            print("File soccer.json not found.")
-            input('Enter to continue...')
+            print(f"{texts["file_not_found"]}: soccer.json")
+            input(f'{texts["enter_to_continue"]}...')
             return
         except Exception as e:
             print(f'ERROR: {e}')
-            input('Enter to continue...')
+            input(f'{texts["enter_to_continue"]}...')
             return
         
         games = data['games']
         if not games:
-            print('No games to export')
+            print(f'{texts["no_games"]}')
             return
     
-        headers = ['Date', 'POS', 'MIN', 'GOALS', 'AST', 'SHOTS', 'SHOTS MADE', 'Yellow cards', 'Red cards', 'Fouls', 'WIN']
+        headers = ['Date', 'POS', 'MIN', 'GOALS', 'AST', 'SHOTS', 'Yellow cards', 'Red cards', 'Fouls', 'WIN']
 
         key_mapping = {
         'Date': 'date',
@@ -75,7 +76,6 @@ def export_to_csv(sport, filename='export.csv'):
         'GOALS': 'goals',
         'AST': 'assists',
         'SHOTS': 'shots',
-        'SHOTS MADE': 'shots_on_target',
         'Yellow cards': 'yellow_cards',
         'Red cards': 'red_cards',
         'Fouls': 'fouls',
@@ -90,5 +90,5 @@ def export_to_csv(sport, filename='export.csv'):
                 writer.writerow(row)
 
     
-    print(f'Export finished in file {filename}')
-    input('Enter to continue...')
+    print(f'{texts["export_finished"]} {filename}')
+    input(f'{texts["enter_to_continue"]}...')

@@ -1,4 +1,5 @@
 import data_handler
+from ui_handler import texts
 
 db = data_handler
 games = data_handler.db["games"]
@@ -22,7 +23,7 @@ def stats_review():
         efficiency = calculate_efficiency(all_points, all_rebounds, all_assists, all_steals, all_blocks, all_missed, all_turnovers, all_missed_free_throws)
 
         if all_games == 0:
-            print("You have no saved games.")
+            print(f"{texts["no_saved_games"]}.")
             return 
     
         table = [["Points", all_points, round(all_points / all_games, 2)], ["Minutes", all_minutes, None],
@@ -32,12 +33,12 @@ def stats_review():
                 ["Missed", all_missed, round(all_missed / all_games, 2)], ["Missed Free Throws", all_missed_free_throws, round(all_missed_free_throws / all_games, 2)]
                 ]
 
-        print(f"{'STAT':<20} {'ALL-TIME':<10} {'PER-GAME'}")
+        print(f"{f'{texts["stat"]}':<20} {f'{texts["all_time"]}':<10} {f'{texts["per_game"]}'}")
         print("─" * 40)
         for stat, ag, pg in table:
             print(f"{stat:<20} {ag:<10} {pg}")
         print("─" * 40)
-        print(f"Games: {all_games}\nEfficiency: {efficiency}")
+        print(f"{texts["games"]}: {all_games}\n{texts["efficiency"]}: {efficiency}")
         print("─" * 40)
     
     elif sport == 2:
@@ -51,7 +52,7 @@ def stats_review():
         all_games = len(games)
         
         if all_games == 0:
-            print('You have no saved games.')
+            print(f"{texts["no_saved_games"]}.")
             return
         
         table = [["Minutes", all_minutes, None], ["Goals", all_goals, round(all_goals / all_games, 2)],
@@ -60,12 +61,12 @@ def stats_review():
                 ["Red Cards", all_red_cards, round(all_red_cards / all_games, 2)]
                 ]
         
-        print(f"{'STAT':<20} {'ALL-TIME':<10} {'PER-GAME'}")
+        print(f"{f'{texts["stat"]}':<20} {f'{texts["all_time"]}':<10} {f'{texts["per_game"]}'}")
         print("─" * 40)
         for stat, ag, pg in table:
             print(f"{stat:<20} {ag:<10} {pg}")
         print("─" * 40)
-        print(f"Games: {all_games}")
+        print(f"{texts["games"]}: {all_games}")
         print("─" * 40)
 
 
@@ -83,7 +84,7 @@ def show_stats(matchIndex):
                 ["Personal fouls", str(games[matchIndex]["personal_fouls"])], ["Missed Free Throws", str(games[matchIndex]["missedFT"])],
                 ["Turnovers", str(games[matchIndex]["turnovers"])], ["Won", str(games[matchIndex]["Won"])]
                 ]
-        print(f"{'STAT':<20} {'VALUE'}")
+        print(f"{f'{texts["stat"]}':<20} {f'{texts["value"]}'}")
         print("─" * 35)
         for stat, value in table:
             print(f"{stat:<20} {value}")
@@ -95,7 +96,7 @@ def show_stats(matchIndex):
                 ["Shots on target", str(games[matchIndex]["shots_on_target"])], ["Yellow Cards", str(games[matchIndex]["yellow_cards"])],
                 ["Red Cards", str(games[matchIndex]["red_cards"])], ["Won", str(games[matchIndex]["Won"])]
                 ]
-        print(f"{'STAT':<20} {'VALUE'}")
+        print(f"{f'{texts["stat"]}':<20} {f'{texts["value"]}'}")
         print("─" * 35)
         for stat, value in table:
             print(f"{stat:<20} {value}")

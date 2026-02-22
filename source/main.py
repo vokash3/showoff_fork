@@ -11,6 +11,7 @@ ui = ui_handler
 stats = statistics_handler
 games = data_handler.db["games"]
 export = export_handler
+texts = ui.texts
 
 if db.sport == 1:
     sport = 'basketball'
@@ -20,31 +21,31 @@ elif db.sport == 2:
 def main():
     while True:
         Menu.show_info(False)
-        print(f"Currently in {sport}")
+        print(f"{texts["currently_in"]} {sport}")
         user_choice = Menu.create_menu()
 
         if user_choice == 1:
             db.add_match()
-            print("Added!")
+            print(f"{texts["added"]}")
             db.save()
-            input("Enter to continue... ")
+            input(f"{texts["enter_to_continue"]}... ")
             Menu.clear_screen()
 
         elif user_choice == 2:
             gamescount = len(games)
             for i in range(gamescount):
                 print(f"{i + 1} - {str(games[i]['name'])}")
-            choice = input("What game to show?(leave blank to exit)\n")
+            choice = input(f"{texts["game_to_show"]}\n")
             if choice != '' and int(choice) - 1 in range(gamescount):
                 stats.show_stats(int(choice) - 1)
             else:
-                print("Game index out of range.")
-            input("Enter to continue... ")
+                print(f"{texts["game_index_out"]}.")
+            input(f"{texts["enter_to_continue"]}... ")
             Menu.clear_screen()
 
         elif user_choice == 3:
             stats.stats_review()
-            input("Enter to continue... ")
+            input(f"{texts["enter_to_continue"]}... ")
             Menu.clear_screen()
 
         elif user_choice == 4:
@@ -57,9 +58,13 @@ def main():
         elif user_choice == 6:
             Menu.clear_screen()
             Menu.show_info(True)
-            input("Enter to continue... ")
+            input(f"{texts["enter_to_continue"]}... ")
             Menu.clear_screen()
+
         elif user_choice == 7:
+            os.execv(sys.executable, ['python'] + sys.argv)
+
+        elif user_choice == 8:
             break
 
 
