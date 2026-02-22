@@ -1,5 +1,7 @@
 import data_handler
 import ui_handler
+import os
+import sys
 from ui_handler import Menu
 import statistics_handler
 import export_handler
@@ -50,11 +52,14 @@ def main():
             Menu.clear_screen()
 
         elif user_choice == 5:
+            os.execv(sys.executable, ['python'] + sys.argv)
+
+        elif user_choice == 6:
             Menu.clear_screen()
             Menu.show_info(True)
             input("Enter to continue... ")
             Menu.clear_screen()
-        elif user_choice == 6:
+        elif user_choice == 7:
             break
 
 
