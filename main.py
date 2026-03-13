@@ -21,31 +21,31 @@ elif db.sport == 2:
 def main():
     while True:
         Menu.show_info(False)
-        print(f"{texts["currently_in"]} {sport}")
+        print(f"{texts['currently_in']} {sport}")
         user_choice = Menu.create_menu()
 
         if user_choice == 1:
             db.add_match()
-            print(f"{texts["added"]}")
+            print(f"{texts['added']}")
             db.save()
-            input(f"{texts["enter_to_continue"]}... ")
+            input(f"{texts['enter_to_continue']}... ")
             Menu.clear_screen()
 
         elif user_choice == 2:
             gamescount = len(games)
             for i in range(gamescount):
                 print(f"{i + 1} - {str(games[i]['name'])}")
-            choice = input(f"{texts["game_to_show"]}\n")
+            choice = input(f"{texts['game_to_show']}\n")
             if choice != '' and int(choice) - 1 in range(gamescount):
                 stats.show_stats(int(choice) - 1)
             else:
-                print(f"{texts["game_index_out"]}.")
-            input(f"{texts["enter_to_continue"]}... ")
+                print(f"{texts['game_index_out']}.")
+            input(f"{texts['enter_to_continue']}... ")
             Menu.clear_screen()
 
         elif user_choice == 3:
             stats.stats_review()
-            input(f"{texts["enter_to_continue"]}... ")
+            input(f"{texts['enter_to_continue']}... ")
             Menu.clear_screen()
 
         elif user_choice == 4:
@@ -58,7 +58,7 @@ def main():
         elif user_choice == 6:
             Menu.clear_screen()
             Menu.show_info(True)
-            input(f"{texts["enter_to_continue"]}... ")
+            input(f"{texts['enter_to_continue']}... ")
             Menu.clear_screen()
 
         elif user_choice == 7:

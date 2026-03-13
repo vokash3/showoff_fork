@@ -8,17 +8,17 @@ def export_to_csv(sport, filename='export.csv'):
             with open('basketball.json', 'r', encoding='utf-8') as f:
                 data = json.load(f)
         except FileNotFoundError:
-            print(f"{texts["file_not_found"]}: basketball.json")
-            input(f'{texts["enter_to_continue"]}...')
+            print(f"{texts['file_not_found']}: basketball.json")
+            input(f"{texts['enter_to_continue']}...")
             return
         except Exception as e:
             print(f'ERROR: {e}')
-            input(f'{texts["enter_to_continue"]}...')
+            input(f"{texts['enter_to_continue']}...")
             return
         
         games = data['games']
         if not games:
-            print(f'{texts["no_games"]}')
+            print(f"{texts['no_games']}")
             return
     
         headers = ['Date', 'POS', 'MIN', 'PTS', 'AST', '2PTA', '2PTM', '3PTA', '3PTM', 'REB', 'BLK', 'STL', 'PF', 'Missed Free Throws', 'Turnovers', 'WIN']
@@ -54,17 +54,17 @@ def export_to_csv(sport, filename='export.csv'):
             with open('soccer.json', 'r', encoding='utf-8') as f:
                 data = json.load(f)
         except FileNotFoundError:
-            print(f"{texts["file_not_found"]}: soccer.json")
-            input(f'{texts["enter_to_continue"]}...')
+            print(f"{texts['file_not_found']}: soccer.json")
+            input(f"{texts['enter_to_continue']}...")
             return
         except Exception as e:
             print(f'ERROR: {e}')
-            input(f'{texts["enter_to_continue"]}...')
+            input(f"{texts['enter_to_continue']}...")
             return
         
         games = data['games']
         if not games:
-            print(f'{texts["no_games"]}')
+            print(f"{texts['no_games']}")
             return
     
         headers = ['Date', 'POS', 'MIN', 'GOALS', 'AST', 'SHOTS', 'Yellow cards', 'Red cards', 'Fouls', 'WIN']
@@ -90,5 +90,5 @@ def export_to_csv(sport, filename='export.csv'):
                 writer.writerow(row)
 
     
-    print(f'{texts["export_finished"]} {filename}')
-    input(f'{texts["enter_to_continue"]}...')
+    print(f"{texts['export_finished']} {filename}")
+    input(f"{texts['enter_to_continue']}...")

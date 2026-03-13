@@ -72,3 +72,27 @@ If you want to build yours binary:
    ```
 
 3. A ready binary will be built in the same folder
+
+
+## Kivy (GUI for Desktop + Mobile)
+
+### Run on desktop
+```bash
+python -m pip install kivy
+python kivy_main.py
+```
+
+Data files are stored in Kivy `user_data_dir` (so it works the same on Android/iOS later).
+
+### Legacy CLI (fixed)
+```bash
+python main_cli.py
+```
+
+### Android (Buildozer - overview)
+1. Install buildozer (Linux recommended)
+2. `buildozer init`
+3. Set `requirements = python3,kivy`
+4. `buildozer -v android debug`
+
+Entry point for buildozer: `source/kivy_main.py`
